@@ -1,0 +1,16 @@
+body {
+    background: black;
+    color: white;
+}
+
+.jumbotron {
+    background: grey;
+}
+
+.delete-form {
+    display: inline;
+}
+
+a {
+    color: black;
+}
