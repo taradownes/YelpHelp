@@ -20,7 +20,8 @@ var indexRoutes = require("./routes/index");
 
 
 //APP CONFIG
-mongoose.connect("mongodb://localhost:27017/yelpcamp", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost:27017/yelpcamp", { useNewUrlParser: true });
+mongoose.connect("mongodb://Tara yelpcamp:Superman1@ds121312.mlab.com:21312/yelpcamp444", { useNewUrlParser: true });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
