@@ -4,8 +4,8 @@
 
 <div class="container" style="max-width: 700px; margin: 0 auto;">
     <div class="row">
-        <h1 class="col-md-12" style="padding: 40px">Add new comment to <%= campground.name %>!</h1>
-        <form class="col-md-12" action="/campgrounds/<%= campground._id %>/comments" method="POST">
+        <h1 class="col-md-12" style="padding: 40px">Add new comment to <%= beach.name %>!</h1>
+        <form class="col-md-12" action="/beaches/<%= beach._id %>/comments" method="POST">
             <div class="form-group">
               <input class="form-control" type="text" name="comment[text]" placeholder="text">
             </div>
@@ -16,6 +16,6 @@
     </div>
 
 
-<a href="/campgrounds">Go Back</a>
+<a href="/beaches">Go Back</a>
 </div>
 <% include ../partials/footer  %>

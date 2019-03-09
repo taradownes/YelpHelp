@@ -1,4 +1,4 @@
-var Campground = require("../models/campgrounds");
+var Beach = require("../models/beaches");
 var Comment = require("../models/comment");
 
 var middlewareObj = {};
@@ -18,7 +18,7 @@ middlewareObj.checkCommentOwnership = function(req, res, next) {
            Comment.findById(req.params.comment_id, function(err, foundComment){
                if(err || !foundComment){
                    req.flash("error", "Comment not found");
-                   res.redirect("/campgrounds");
+                   res.redirect("/beaches");
                } else {
                    if(foundComment.author.id.equals(req.user._id)){
                         next();
@@ -34,14 +34,14 @@ middlewareObj.checkCommentOwnership = function(req, res, next) {
     }
 };
 
-middlewareObj.checkCampgroundOwnership = function(req, res, next) {
+middlewareObj.checkBeachOwnership = function(req, res, next) {
     if(req.isAuthenticated()){
-           Campground.findById(req.params.id, function(err, foundCampground){
-               if(err || !foundCampground){
-                   req.flash("error", "Campground not found");
-                   res.redirect("/campgrounds");
+           Beach.findById(req.params.id, function(err, foundBeach){
+               if(err || !foundBeach){
+                   req.flash("error", "Beach not found");
+                   res.redirect("/beaches");
                } else {
-                   if(foundCampground.author.id.equals(req.user._id)){
+                   if(foundBeach.author.id.equals(req.user._id)){
                         next();
                    } else {
                        req.flash("error", "Permission Denied");

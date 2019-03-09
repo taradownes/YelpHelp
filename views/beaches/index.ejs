@@ -1,0 +1,31 @@
+<% include ../partials/header  %>
+
+<div class="beaches"> 
+    <div class="beaches-header">
+            <h1>Welcome to YelpHelp</h1>
+            <p>Review beaches from all over the world!</p>
+    </div>
+    <div class="beaches-content">
+            <div class="beaches-content-header">
+                        <h1>Our Most Popular Beaches</h1> 
+                        <a id="beaches-content-add" href="/beaches/new"><button>Add New Beach</button></a> 
+            </div>
+    <div class="beach-gallery">
+        <% beaches.forEach(function(beach){ %>
+        <div class="img-container">
+            <div class="image">
+                    <img class="img-fluid img-thumbnail" src="<%= beach.image %>">
+            </div>
+              <div class="caption">
+                  <h4><%= beach.name %></h4>
+              </div>
+              <a href="/beaches/<%= beach._id%>" class="show-button">More Info</a>
+
+        </div>
+        <% }); %>    
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer %>
+
